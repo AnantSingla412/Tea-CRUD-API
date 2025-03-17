@@ -1,219 +1,121 @@
-\
 
+# **Tea API ☕**  
 
-# Tea API
-
-This is a simple **Tea API** built using **Node.js** and **Express.js**. It allows users to **perform CRUD operations** on a list of teas, including adding, retrieving, updating, and deleting tea records.
+A simple **CRUD API** for managing tea records, built using **Node.js and Express.js**.  
 
 ---
 
-## Features 🚀
-
-- **Add a new tea** 🆕
-- **Retrieve all teas** 📜
-- **Retrieve a tea by ID** 🔍
-- **Update a tea's details** ✏️
-- **Delete a tea** ❌
-
----
-
-## Technologies Used 🛠️
-
-- **Node.js**
-
-- **Express.js**
-
-- **dotenv** (for environment variables)
-
-- **Morgan** (for HTTP request logging)
-
-- **Winston** (for structured logging)
-
-- **Node.js**
-
-- **Express.js**
-
-- **dotenv** (for environment variables)
+## **Features 🚀**  
+✅ Add, view, update, and delete tea records  
+✅ Uses **Express.js** for routing  
+✅ Middleware for JSON parsing  
+✅ Error handling and validation  
+✅ Integrated logging for request tracking and debugging  
+✅ Future-ready for database integration  
 
 ---
 
-## Installation & Setup 🏗️
+## **Getting Started 🛠**  
 
-1. **Clone the repository**
+### **1️⃣ Prerequisites**  
+Ensure you have the following installed:  
+- [Node.js](https://nodejs.org/)  
+- [npm](https://www.npmjs.com/) 
 
-   ```sh
-   git clone <repository-url>
-   cd <repository-folder>
-   ```
+### **2️⃣ Installation**  
+Clone the repository and install dependencies:  
+```bash
+git clone https://github.com/AnantSingla412/express.git  
+cd express  
+npm install  
+```
 
-2. **Install dependencies**
-
-   ```sh
-   npm install
-   ```
-
-3. **Run the application**
-
-   ```sh
-   npm start
-   ```
-
-4. The server will start on `http://localhost:3000` (or a port specified in `.env`). Logging is enabled using Morgan and Winston.
-
-5. **Clone the repository**
-
-   ```sh
-   git clone <repository-url>
-   cd <repository-folder>
-   ```
-
-6. **Install dependencies**
-
-   ```sh
-   npm install
-   ```
-
-7. **Run the application**
-
-   ```sh
-   npm start
-   ```
-
-8. The server will start on `http://localhost:3000` (or a port specified in `.env`).
-
----
-
-## API Endpoints 🌐
-
-### Logging Feature 📝
-
-- The API uses **Morgan** and **Winston** for structured logging of HTTP requests.
-- Logs include method, URL, status, and response time.
-- Example log output:
-  ```json
-  {
-    "method": "GET",
-    "url": "/teas",
-    "status": "200",
-    "responseTime": "15ms"
-  }
-  ```
-
-### 1️⃣ **Add a New Tea**
-
-- **Endpoint:** `POST /teas`
-- **Request Body:**
-  ```json
-  {
-    "name": "Green Tea",
-    "price": 10.5
-  }
-  ```
-- **Response:**
-  ```json
-  {
-    "id": 1,
-    "name": "Green Tea",
-    "price": 10.5
-  }
-  ```
-
-### 2️⃣ **Get All Teas**
-
-- **Endpoint:** `GET /teas`
-- **Response:**
-  ```json
-  [
-    {
-      "id": 1,
-      "name": "Green Tea",
-      "price": 10.5
-    }
-  ]
-  ```
-
-### 3️⃣ **Get a Tea by ID**
-
-- **Endpoint:** `GET /teas/:id`
-- **Response (if found):**
-  ```json
-  {
-    "id": 1,
-    "name": "Green Tea",
-    "price": 10.5
-  }
-  ```
-- **Response (if not found):**
-  ```json
-  "Tea not found"
-  ```
-
-### 4️⃣ **Update a Tea**
-
-- **Endpoint:** `PUT /teas/:id`
-- **Request Body:**
-  ```json
-  {
-    "name": "Herbal Tea",
-    "price": 12.0
-  }
-  ```
-- **Response:**
-  ```json
-  {
-    "id": 1,
-    "name": "Herbal Tea",
-    "price": 12.0
-  }
-  ```
-
-### 5️⃣ **Delete a Tea**
-
-- **Endpoint:** `DELETE /teas/:id`
-- **Response:**
-  ```json
-  "deleted"
-  ```
-
----
-
-## Environment Variables 📌
-
-Create a `.env` file in the root directory and define the `PORT` variable:
-
-```env
-PORT=3000
+### **3️⃣ Running the Server**  
+Start the server using:  
+```bash
+npm start  # Runs the server on default port 3000  
+```
+For development mode with auto-restart:  
+```bash
+npm run dev  # Uses nodemon  
 ```
 
 ---
 
-## Improvements & Future Enhancements 🔮
+## **API Endpoints 🔗**  
 
-- ✅ Add a database (MongoDB, PostgreSQL, etc.)
+| Method | Endpoint | Description |  
+|--------|----------|------------|  
+| **POST** | `/teas` | Add a new tea |  
+| **GET** | `/teas` | Get all teas |  
+| **GET** | `/teas/:id` | Get a tea by ID |  
+| **PUT** | `/teas/:id` | Update a tea |  
+| **DELETE** | `/teas/:id` | Delete a tea |  
 
-- ✅ Implement authentication for API security
+📌 **Request & Response Example:**  
 
-- ✅ Add proper error handling and validation
-
-- ✅ Enhance logging capabilities with different log levels and persistent storage
-
-- ✅ Add a database (MongoDB, PostgreSQL, etc.)
-
-- ✅ Implement authentication for API security
-
-- ✅ Add proper error handling and validation
+**POST /teas**  
+_Request:_  
+```json
+{
+  "name": "Green Tea",
+  "price": 20
+}
+```
+_Response:_  
+```json
+{
+  "id": 1,
+  "name": "Green Tea",
+  "price": 20
+}
+```
 
 ---
 
-## Author ✍️
+## **Logging & Debugging 📝**  
 
-**Anant** - Learning backend development and building APIs with Node.js & Express.js.
+This API includes logging to track incoming requests and errors. Logging helps in debugging, monitoring, and improving performance.  
+
+### **1️⃣ Request Logging with Morgan**  
+[**Morgan**](https://www.npmjs.com/package/morgan) is used to log HTTP requests. It captures request details like method, URL, status code, response time, and more.  
+
+Example log format:  
+```bash
+GET /teas 200 10ms
+POST /teas 201 15ms
+PUT /teas/1 404 5ms
+```
+
+### **2️⃣ Application Logging with Winston**  
+[**Winston**](https://www.npmjs.com/package/winston) is used for structured logging and error tracking. It allows:  
+✅ Logging at different levels (`info`, `warn`, `error`, etc.)  
+✅ Storing logs in a file for debugging  
+✅ Custom log formatting  
+
+Example log output:  
+```bash
+[INFO] Server started on port 3000
+[ERROR] Tea not found (ID: 5)
+```
+
+To enable logging, install the required packages:  
+```bash
+npm install morgan winston
+```
 
 ---
 
-## License 📜
+## **Improvements & Future Enhancements 🔮**  
 
-This project is open-source and available under the **MIT License**.
+- ✅ Add a database (MongoDB, PostgreSQL, etc.)  
+- ✅ Implement authentication for API security  
+- ✅ Improve request validation & error handling  
+- ✅ Enhance logging with structured logs & persistent storage  
 
-Happy Coding! 🚀
+---
 
+## **Author ✍️**  
+**Anant** - Learning backend development and building APIs with **Node.js & Express.js**.  
+
+---
