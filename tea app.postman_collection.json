@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "1f618661-bc74-472b-8d07-858c2094a7d7",
+		"name": "tea app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42359994"
+	},
+	"item": [
+		{
+			"name": "add a tea",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"green tea\",\r\n    \"price\":\"100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{mytea}}/teas",
+				"description": "The HTTP POST request to create a new tea resource at {{mytea}}/teas.\n\n### Request Body\n\n- raw (application/json)\n    \n    - name: string - The name of the tea.\n        \n    - price: string - The price of the tea.\n        \n\n### Response\n\nThe response of this request is a JSON schema representing the structure of the response data."
+			},
+			"response": []
+		},
+		{
+			"name": "list all tea",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{mytea}}/teas"
+			},
+			"response": []
+		},
+		{
+			"name": "list tea by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{mytea}}/teas/2"
+			},
+			"response": []
+		},
+		{
+			"name": "update tea by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{mytea}}/teas/2"
+			},
+			"response": []
+		},
+		{
+			"name": "delete tea by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ice tea\",\r\n    \"price\":\"200\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{mytea}}/teas/1"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "mytea",
+			"value": "127.0.0.1:3000",
+			"type": "default"
+		}
+	]
+}
