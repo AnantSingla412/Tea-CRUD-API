@@ -1,3 +1,6 @@
+\
+
+
 # Tea API
 
 This is a simple **Tea API** built using **Node.js** and **Express.js**. It allows users to **perform CRUD operations** on a list of teas, including adding, retrieving, updating, and deleting tea records.
@@ -5,6 +8,7 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
 ---
 
 ## Features 🚀
+
 - **Add a new tea** 🆕
 - **Retrieve all teas** 📜
 - **Retrieve a tea by ID** 🔍
@@ -14,8 +18,21 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
 ---
 
 ## Technologies Used 🛠️
+
 - **Node.js**
+
 - **Express.js**
+
+- **dotenv** (for environment variables)
+
+- **Morgan** (for HTTP request logging)
+
+- **Winston** (for structured logging)
+
+- **Node.js**
+
+- **Express.js**
+
 - **dotenv** (for environment variables)
 
 ---
@@ -23,28 +40,67 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
 ## Installation & Setup 🏗️
 
 1. **Clone the repository**
+
    ```sh
    git clone <repository-url>
    cd <repository-folder>
    ```
 
 2. **Install dependencies**
+
    ```sh
    npm install
    ```
 
 3. **Run the application**
+
    ```sh
    npm start
    ```
 
-4. The server will start on `http://localhost:3000` (or a port specified in `.env`).
+4. The server will start on `http://localhost:3000` (or a port specified in `.env`). Logging is enabled using Morgan and Winston.
+
+5. **Clone the repository**
+
+   ```sh
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+6. **Install dependencies**
+
+   ```sh
+   npm install
+   ```
+
+7. **Run the application**
+
+   ```sh
+   npm start
+   ```
+
+8. The server will start on `http://localhost:3000` (or a port specified in `.env`).
 
 ---
 
 ## API Endpoints 🌐
 
+### Logging Feature 📝
+
+- The API uses **Morgan** and **Winston** for structured logging of HTTP requests.
+- Logs include method, URL, status, and response time.
+- Example log output:
+  ```json
+  {
+    "method": "GET",
+    "url": "/teas",
+    "status": "200",
+    "responseTime": "15ms"
+  }
+  ```
+
 ### 1️⃣ **Add a New Tea**
+
 - **Endpoint:** `POST /teas`
 - **Request Body:**
   ```json
@@ -63,6 +119,7 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
   ```
 
 ### 2️⃣ **Get All Teas**
+
 - **Endpoint:** `GET /teas`
 - **Response:**
   ```json
@@ -76,6 +133,7 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
   ```
 
 ### 3️⃣ **Get a Tea by ID**
+
 - **Endpoint:** `GET /teas/:id`
 - **Response (if found):**
   ```json
@@ -91,6 +149,7 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
   ```
 
 ### 4️⃣ **Update a Tea**
+
 - **Endpoint:** `PUT /teas/:id`
 - **Request Body:**
   ```json
@@ -109,6 +168,7 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
   ```
 
 ### 5️⃣ **Delete a Tea**
+
 - **Endpoint:** `DELETE /teas/:id`
 - **Response:**
   ```json
@@ -118,7 +178,9 @@ This is a simple **Tea API** built using **Node.js** and **Express.js**. It allo
 ---
 
 ## Environment Variables 📌
+
 Create a `.env` file in the root directory and define the `PORT` variable:
+
 ```env
 PORT=3000
 ```
@@ -126,16 +188,32 @@ PORT=3000
 ---
 
 ## Improvements & Future Enhancements 🔮
+
 - ✅ Add a database (MongoDB, PostgreSQL, etc.)
+
 - ✅ Implement authentication for API security
+
+- ✅ Add proper error handling and validation
+
+- ✅ Enhance logging capabilities with different log levels and persistent storage
+
+- ✅ Add a database (MongoDB, PostgreSQL, etc.)
+
+- ✅ Implement authentication for API security
+
 - ✅ Add proper error handling and validation
 
 ---
 
 ## Author ✍️
+
 **Anant** - Learning backend development and building APIs with Node.js & Express.js.
 
 ---
 
+## License 📜
 
+This project is open-source and available under the **MIT License**.
+
+Happy Coding! 🚀
 
