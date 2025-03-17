@@ -1,2 +1,3 @@
 node_modules/
 .env
+tea app.postman_collection.json
