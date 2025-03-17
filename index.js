@@ -28,15 +28,7 @@ app.get("/teas/:id", (req, res) => {
   }
   res.status(200).send(tea);
 });
-// app.get("/",(req, res) => {
-//     res.send("Hello from Anant and his tea!")
-// })
-// app.get("/ice-tea",(req, res) => {
-//     res.send("What ice tea would you prefer?")
-// })
-// app.get("/twitter",(req, res) => {
-//     res.send("anant@.com")
-// })
+
 
 // update tea
 app.put("/teas/:id", (req, res) => {
@@ -47,7 +39,7 @@ app.put("/teas/:id", (req, res) => {
   const { name, price } = req.body;
   tea.name = name;
   tea.price = price;
-  res.send(200).send(tea);
+  res.status(200).send(tea);
 });
 
 //delete tea
